@@ -6,24 +6,24 @@
    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
    http://www.liquibase.org/xml/ns/dbchangelog
    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
-    <changeSet id="add_column_1" author="kosenko">
+    <changeSet id="add_column_1_1" author="kosenko">
         <addColumn tableName="product">
             <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="PK_product" />
             </column>
         </addColumn>
     </changeSet>
-    <changeSet id="add_column_2" author="kosenko">
+    <changeSet id="add_column_2_2" author="kosenko">
         <addColumn tableName="product">
             <column name="name" type="text"/>
         </addColumn>
     </changeSet>
-    <changeSet id="add_column_3" author="kosenko">
+    <changeSet id="add_column_3_3" author="kosenko">
         <addColumn tableName="product">
             <column name="price" type="INT"/>
         </addColumn>
     </changeSet>
-    <changeSet id="insert_11" author="kosenko">
+    <changeSet id="insert_11_1" author="kosenko">
         <sql>
             INSERT INTO product (name, price) VALUES
             ('orange', 80),
@@ -49,24 +49,24 @@
         </sql>
     </changeSet>
 
-    <changeSet id="add_column_21" author="kosenko">
+    <changeSet id="add_column_21_1" author="kosenko">
         <addColumn tableName="person">
             <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="PK_product" />
             </column>
         </addColumn>
     </changeSet>
-    <changeSet id="add_column_222" author="kosenko">
+    <changeSet id="add_column_22_2" author="kosenko">
         <addColumn tableName="person">
             <column name="first_name" type="text"/>
         </addColumn>
     </changeSet>
-    <changeSet id="add_column_233" author="kosenko">
+    <changeSet id="add_column_233_3" author="kosenko">
         <addColumn tableName="person">
             <column name="last_name" type="text"/>
         </addColumn>
     </changeSet>
-    <changeSet id="insert_22" author="kosenko">
+    <changeSet id="insert_22_2" author="kosenko">
         <sql>
             INSERT INTO person (first_name, last_name) VALUES
             ('Jane', 'Smith'),
@@ -77,7 +77,7 @@
             ('Elizabet', 'Stonem');
         </sql>
     </changeSet>
-    <changeSet id="add_table_role" author="kosenko">
+    <changeSet id="add_table_role_1" author="kosenko">
         <createTable tableName="role">
             <column name="id" type="UUID">
                 <constraints primaryKey="true"/>
@@ -87,7 +87,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet id="change_person_for_security" author="kosenko">
+    <changeSet id="change_person_for_security_1" author="kosenko">
         <addColumn tableName="person">
             <column name="role_id" type="UUID">
                 <constraints foreignKeyName="fk_role" references="role(id)"/>
