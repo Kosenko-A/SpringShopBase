@@ -9,7 +9,7 @@
     <changeSet id="add_column_1_1" author="kosenko">
         <addColumn tableName="product">
             <column name="id" type="BIGINT" autoIncrement="true">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_product" />
+                <constraints primaryKey="true" primaryKeyName="PK_product" />
             </column>
         </addColumn>
     </changeSet>
@@ -52,7 +52,7 @@
     <changeSet id="add_column_21_1" author="kosenko">
         <addColumn tableName="person">
             <column name="id" type="BIGINT" autoIncrement="true">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_product" />
+                <constraints primaryKey="true" primaryKeyName="PK_product" />
             </column>
         </addColumn>
     </changeSet>

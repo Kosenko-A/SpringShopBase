@@ -21,7 +21,7 @@ public class CartController {
     @ApiOperation("Добавить товар в корзину")
     public String addProductInCart(@PathVariable Long id) {
         cart.put(id);
-        return "redirect:/";
+        return "Product was put in cart successfully";
     }
 
     @GetMapping
@@ -34,6 +34,6 @@ public class CartController {
     @ApiModelProperty("Удалить товар из корзины")
     public String deleteFromCart(@PathVariable Long id) {
         cart.delete(id);
-        return "redirect:/";
+        return "Product was deleted from cart successfully";
     }
 }
