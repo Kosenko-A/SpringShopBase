@@ -1,0 +1,38 @@
+package ru.geekbrains.SpringShopBase.controller;
+
+import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+import ru.geekbrains.SpringShopBase.entity.Cart;
+import ru.geekbrains.SpringShopBase.entity.Product;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+@RestController
+@RequestMapping("api/v1/cart")
+public class CartController {
+
+    @Autowired
+    Cart cart;
+
+    @PostMapping("{id}")
+    @ApiOperation("Добавить товар в корзину")
+    public String addProductInCart(@PathVariable Long id) {
+        cart.put(id);
+        return "Товар успешно добавлен в корзину";
+    }
+
+
+
+    @DeleteMapping("/delete/{id}")
+    @ApiModelProperty("Удалить товар из корзины")
+    public String deleteFromCart(@PathVariable Long id) {
+        cart.delete(id);
+        return "Product was deleted from cart successfully";
+    }
+}
