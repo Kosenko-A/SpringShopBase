@@ -20,7 +20,7 @@ public class WebController {
     @Autowired
     PersonRepository personRepository;
 
-    @GetMapping
+    @GetMapping ("/listList")
     public String index(Model model) {
         List<Product> productList = productRepository.findAll();
         model.addAttribute("products", productList);
@@ -37,6 +37,11 @@ public class WebController {
     @GetMapping("/login")
     public String showMyLoginPage() {
         return "login";
+    }
+
+    @GetMapping("/registration")
+    public String showregform() {
+        return "registration-form";
     }
 
 

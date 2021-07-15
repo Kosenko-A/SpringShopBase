@@ -3,11 +3,14 @@ package ru.geekbrains.SpringShopBase.controller;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.geekbrains.SpringShopBase.entity.Cart;
 import ru.geekbrains.SpringShopBase.entity.Product;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -21,14 +24,10 @@ public class CartController {
     @ApiOperation("Добавить товар в корзину")
     public String addProductInCart(@PathVariable Long id) {
         cart.put(id);
-        return "Product was put in cart successfully";
+        return "Товар успешно добавлен в корзину";
     }
 
-    @GetMapping
-    @ApiOperation("Просмотр товаров в корзине")
-    public ArrayList<Optional<Product>> showCart() {
-        return cart.get();
-    }
+
 
     @DeleteMapping("/delete/{id}")
     @ApiModelProperty("Удалить товар из корзины")

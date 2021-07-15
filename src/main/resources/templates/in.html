@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Products</title>
+    <title>Home</title>
     <link rel = "stylesheet" href = "css/in.css">
 </head>
 <body>
@@ -21,25 +21,24 @@
     </form>
 </div>
 <div class ="block">
-<h1>Products</h1>
-<table>
-    <tr th:each = "product: ${products}">
-        <td th:text = "${product.id}"/>
-        <td th:text = "${product.name}"/>
-        <td th:text = "${product.price}"/>
-        <td>
-            <form action="#" th:action="@{'/api/v1/cart/{id}'(id=${product.id})}" th:method="post">
-                <input type="hidden" name="_method" value="add to cart" />
-                <button type="submit" id="submitButton"> </button>
-            </form>
-        </td>
-    </tr>
-</table>
-<br>
-<form action="#" th:action="@{/api/v1/cart}" th:method="get">
-    <input type="submit" value="Show cart">
-</form>
+    <div class="box">
+        <h1>Интернет-магазин супермаркета "Луч"</h1>
+
+        <div class = "img"><img src="images/supermarket.jpg"
+                                width="370"
+                                height="400">
+        </div>
+        <div class ="bel">
+            <p class="a">Добро пожаловать на сайт супермаркета "Луч"! </p>
+            <p class="b">Мы рады приветствовать вас на сайте нашей компании. Мы имеем свой склад с постоянным наличием необходимого запаса товаров, отдел продаж и службу доставки.
+
+                За это время у нас сложились партнерские отношения с ведущими производителями, позволяющие предлагать высококачественную продукцию по конкурентоспособным ценам.</a></p>
+            <p class="c">Приятных Вам покупок!</p>
+            <br>
+        </div>
+    </div>
 </div>
+
 <div class="footer">
     <form action="#" th:action="@{/home}" th:method="get">
         <input type="submit" value="Главная">
@@ -57,5 +56,7 @@
     <br>
     <div class = "copy"> Copyright &copy; <?php echo date("Y");?> Angelina Kosenko</div>
 </div>
+</body>
+</html>
 </body>
 </html>
