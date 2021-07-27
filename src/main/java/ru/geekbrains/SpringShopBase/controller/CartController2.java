@@ -29,4 +29,6 @@ public class CartController2 {
         model.addAttribute("products", productList);
         return "cart";
     }
+
+
 }

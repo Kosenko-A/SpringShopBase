@@ -15,6 +15,7 @@
     </form>
     <form action="#" th:action="@{/api/v1/cart}"  th:method="get">
         <input type="submit" value="Корзина">
+        <th scope="row">{{cartDto.totalQuantity + 'шт.'}}</th>
     </form>
     <form action="#" th:action="@{/greeting}" th:method="get">
         <input type="submit" value="Регистрация">
@@ -29,16 +30,13 @@
         <td th:text = "${product.price}"/>
         <td>
             <form action="#" th:action="@{'/api/v1/cart/{id}'(id=${product.id})}" th:method="post">
-                <input type="hidden" name="_method" value="add to cart" />
-                <button type="submit" id="submitButton"> </button>
+                <input type="submit" value="В корзину" />
             </form>
         </td>
     </tr>
 </table>
 <br>
-<form action="#" th:action="@{/api/v1/cart}" th:method="get">
-    <input type="submit" value="Show cart">
-</form>
+
 </div>
 <div class="footer">
     <form action="#" th:action="@{/home}" th:method="get">
