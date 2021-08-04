@@ -29,5 +29,13 @@ public class Cart {
     public void delete(Long id) {
         cart.remove(id);
     }
+
+    @Override
+    public String toString() {
+        return "Cart{" +
+                "cart=" + cart +
+                ", productRepository=" + productRepository +
+                '}';
+    }
 }
 

@@ -29,7 +29,13 @@
     <td th:text = "${product.id}"/>
     <td th:text = "${product.name}"/>
     <td th:text = "${product.price}"/>
+
 </tr>
+            <td>
+                <form action="#" th:action="@{cart/mail}" th:method="get">
+                    <input type="submit" value="Оформить заказ" />
+                </form>
+            </td>
         </table>
     </div>
 </div>

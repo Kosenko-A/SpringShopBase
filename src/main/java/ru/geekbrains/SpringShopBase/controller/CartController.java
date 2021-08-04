@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.geekbrains.SpringShopBase.entity.Cart;
+import ru.geekbrains.SpringShopBase.network.SendEmail;
 
 
 import java.util.ArrayList;
@@ -20,6 +21,9 @@ public class CartController {
 
     @Autowired
     Cart cart;
+
+    @Autowired
+    SendEmail sendEmail;
 
     int totalQuantity;
 
@@ -42,5 +46,13 @@ public class CartController {
         cart.delete(id);
         totalQuantity--;
         return "Product was deleted from cart successfully";
+    }
+
+    @GetMapping("/mail")
+    @ApiOperation("Оформить заказ")
+    public String sendOrder() throws Exception {
+        String text = cart.toString();
+        sendEmail.sendEmail(text);
+        return "Сообщение отправлено";
     }
 }
