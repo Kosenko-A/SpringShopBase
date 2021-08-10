@@ -16,9 +16,10 @@ public class Cart {
     @Autowired
     ProductRepository productRepository;
 
-    public void put(Long id) {
+    public String put(Long id) {
         Optional<Product> product = productRepository.findById(id);
         cart.put(id, product);
+        return "successfully";
     }
 
     public ArrayList<Optional<Product>> get() {
