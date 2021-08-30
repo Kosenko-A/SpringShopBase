@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+    <link rel = "stylesheet" href = "css/in.css">
+</head>
+<body>
+<div class="header">
+    <form action="#" th:action="@{/home}" th:method="get">
+        <input type="submit" value="Главная">
+    </form>
+    <form action="#" th:action="@{/listList}" th:method="get">
+        <input type="submit" value="Товары">
+    </form>
+    <form action="#" th:action="@{/api/v1/cart}"  th:method="get">
+        <input type="submit" value="Корзина">
+        <th scope="row">{{cartDto.totalQuantity + 'шт.'}}</th>
+    </form>
+    <form action="#" th:action="@{/greeting}" th:method="get">
+        <input type="submit" value="Регистрация">
+    </form>
+    <form action="#" th:action="@{/news}" th:method="get">
+        <input type="submit" value="Новости">
+    </form>
+</div>
+<div class ="block">
+<h1>Products</h1>
+<table>
+    <tr th:each = "product: ${products}">
+        <td th:text = "${product.id}"/>
+        <td th:text = "${product.name}"/>
+        <td th:text = "${product.price}"/>
+        <td>
+            <form action="#" th:action="@{'/api/v1/cart/{id}'(id=${product.id})}" th:method="post">
+                <input type="submit" value="В корзину" />
+            </form>
+        </td>
+    </tr>
+</table>
+<br>
+
+</div>
+<div class="footer">
+    <form action="#" th:action="@{/home}" th:method="get">
+        <input type="submit" value="Главная">
+    </form>
+    <form action="#" th:action="@{/listList}" th:method="get">
+        <input type="submit" value="Товары">
+    </form>
+    <form action="#" th:action="@{/api/v1/cart}"  th:method="get">
+        <input type="submit" value="Корзина">
+    </form>
+    <form action="#" th:action="@{/greeting}" th:method="get">
+        <input type="submit" value="Регистрация">
+    </form>
+    <form action="#" th:action="@{/news}" th:method="get">
+        <input type="submit" value="Новости">
+    </form>
+    <br>
+    <br>
+    <div class = "copy"> Copyright &copy; <?php echo date("Y");?> Angelina Kosenko</div>
+</div>
+</body>
+</html>

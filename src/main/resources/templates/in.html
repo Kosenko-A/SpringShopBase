@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel = "stylesheet" href = "css/in.css">
+</head>
+<body>
+<div class="header">
+    <form action="#" th:action="@{/home}" th:method="get">
+        <input type="submit" value="Главная">
+    </form>
+    <form action="#" th:action="@{/listList}" th:method="get">
+        <input type="submit" value="Товары">
+    </form>
+    <form action="#" th:action="@{/api/v1/cart}"  th:method="get">
+        <input type="submit" value="Корзина">
+    </form>
+    <form action="#" th:action="@{/greeting}" th:method="get">
+        <input type="submit" value="Регистрация">
+    </form>
+    <form action="#" th:action="@{/news}" th:method="get">
+        <input type="submit" value="Новости">
+    </form>
+</div>
+<div class ="block">
+    <div class="box">
+        <h1>Интернет-магазин супермаркета "Луч"</h1>
+
+        <div class = "img"><img src="images/supermarket.jpg"
+                                width="370"
+                                height="400">
+        </div>
+        <div class ="bel">
+            <p class="a">Добро пожаловать на сайт супермаркета "Луч"! </p>
+            <p class="b">Мы рады приветствовать вас на сайте нашей компании. Мы имеем свой склад с постоянным наличием необходимого запаса товаров, отдел продаж и службу доставки.
+
+                За это время у нас сложились партнерские отношения с ведущими производителями, позволяющие предлагать высококачественную продукцию по конкурентоспособным ценам.</a></p>
+            <p class="c">Приятных Вам покупок!</p>
+            <br>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <form action="#" th:action="@{/home}" th:method="get">
+        <input type="submit" value="Главная">
+    </form>
+    <form action="#" th:action="@{/listList}" th:method="get">
+        <input type="submit" value="Товары">
+    </form>
+    <form action="#" th:action="@{/api/v1/cart}"  th:method="get">
+        <input type="submit" value="Корзина">
+    </form>
+    <form action="#" th:action="@{/greeting}" th:method="get">
+        <input type="submit" value="Регистрация">
+    </form>
+    <form action="#" th:action="@{/news}" th:method="get">
+        <input type="submit" value="Новости">
+    </form>
+    <br>
+    <br>
+    <div class = "copy"> Copyright &copy; <?php echo date("Y");?> Angelina Kosenko</div>
+</div>
+</body>
+</html>
+</body>
+</html>
