@@ -25,20 +25,9 @@
     </form>
 </div>
 <div class ="block">
-<h1>Products</h1>
-<table>
-    <tr th:each = "product: ${products}">
-        <td th:text = "${product.id}"/>
-        <td th:text = "${product.name}"/>
-        <td th:text = "${product.price}"/>
-        <td>
-            <form action="#" th:action="@{'/api/v1/cart/{id}'(id=${product.id})}" th:method="post">
-                <input type="submit" value="В корзину" />
-            </form>
-        </td>
-    </tr>
-</table>
-<br>
+    <h1>НОВОСТИ</h1>
+    <h3>На сайте появились новые товары!</h3>
+    <br>
 
 </div>
 <div class="footer">
